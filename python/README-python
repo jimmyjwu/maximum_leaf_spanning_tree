@@ -1,0 +1,27 @@
+version: 1
+
+This directory contains the Python implementations of the format checkers.
+Our submission system will be implemented using the Go format checkers, but
+for checking formats the Python implementations should be sufficient.
+
+===== To use the format checkers =====
+
+If you have Python installed, run
+  $ python check_input.py
+or
+  $ python check_input.py file.in
+
+The first command checks the default input file (i.e., "mlst.in"), and the
+second command checks the input file "file.in".
+
+To check the output file, run:
+  $ python check_output.py
+or
+  $ python check_output.py file.in file.out
+
+The first command checks the default output file (i.e., "mlst.out") against
+the default input file (i.e., "mlst.in").
+The second command checks the output file "file.out" against the input file
+"file.in".
+
+See config.py for the default settings.

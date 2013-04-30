@@ -1,0 +1,54 @@
+version: 0
+
+File Formats for Maximum Leaf Spanning Tree project
+
+=== Input File Format ===
+
+An input file contains a collection of input graphs.  The first line of the
+input file contains one nonnegative integer T, which is the number of graph
+descriptions to follow.
+
+Each graph description begins with a line containing a single nonnegative
+integer M, which is the number of edges in the graph.  Then follow M lines,
+each describing an edge.  Each one of those lines has two distinct integers u
+and v, with exactly one space between each of the integers.  Each integer
+should be between 0 and MaxNumNodes-1 (see config.go).  The set of nodes in
+the input graph is exactly the set of numbers that appear as ends of edges.
+Also, all edges in the graph should be in the same connected component.
+
+For example, here is an input file which describes two graphs and is eight
+lines long.  The first graph has one edge connecting nodes 0 and 1.  The second
+graph has four edges, bringing nodes 0, 1, 4 and 10 into a single component.
+
+2
+1
+0 1
+4
+0 1
+1 4
+1 10
+0 10
+
+
+=== Output File Format ===
+
+The first line of the output file contains a single nonnegative integer T,
+which is the number of test case outputs to follow.  This must be equal to the
+first line of the input file.
+
+Each test case output begins with a line containing a single nonnegative
+integer K, which is the number of edges in the spanning tree.  The next K
+lines contain two integers separated by a space, which is an edge in the
+spanning tree.
+
+For example, here is a valid output corresponding to the above example input.
+The spanning tree in the first graph contains the only edge.  The spanning
+tree in the second graph contains three edges.
+
+2
+1
+0 1
+3
+1 4
+1 0
+10 1

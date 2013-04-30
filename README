@@ -1,0 +1,17 @@
+version: 1
+
+This directory contains details about the project for Maximum Leaf Spanning
+Tree.
+
+FILE_FORMAT - specifies the file format for input and output.
+
+mlst.in     - contains sample inputs.
+mlst.out    - contains sample outputs corresponding to the sample inputs.
+
+INSTALL     - contains instructions for installing the checker programs for
+              validating the input and output file formats (optional).
+
+python      - contains Python implementations of checker programs (optional).
+
+== CHANGE_LOG ==
+version 1: Added Python implementations.
