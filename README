@@ -1,17 +1,25 @@
-version: 1
+Maximum Leaf Spanning Tree Competition
 
-This directory contains details about the project for Maximum Leaf Spanning
-Tree.
 
-FILE_FORMAT - specifies the file format for input and output.
+FILE_FORMAT				- Specifies the file format for inputs (graphs) and outputs (trees).
 
-mlst.in     - contains sample inputs.
-mlst.out    - contains sample outputs corresponding to the sample inputs.
+Papers/					- Contains useful academic research papers.
 
-INSTALL     - contains instructions for installing the checker programs for
-              validating the input and output file formats (optional).
+python/					- Contains instructor-provided tools
+	check_input.py 		- Checks that your input conforms to FILE_FORMAT.
+	check_output.py 	- Checks that your output conforms to FILE_FORMAT.
+	checker.py
+	config.py
+	graph.py 			- Contains useful graph-related classes.
+	graph_generator.py 	- [IN PROGRESS] Script for generating hard instances.
+	hard.in 			- Our hard instances (input graphs).
+	hard.out 			- Our hard instances (output trees).
+	reader.py
+	README-python 		- Instructions for using the Python format checkers.
+	sample_hard.in 		- Sample hard instances (input graphs).
+	sample_hard.out 	- Sample hard instances (output trees).
+	sample_team.txt 	- Sample team member list.
+	team.txt 			- Our team member list.
 
-python      - contains Python implementations of checker programs (optional).
-
-== CHANGE_LOG ==
-version 1: Added Python implementations.
+mlst.in 	- contains sample inputs.
+mlst.out 	- contains sample outputs corresponding to the sample inputs.
