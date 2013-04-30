@@ -1,0 +1,5 @@
+Notes:
+
+- The vast majority of algorithms will include some kind of greedy mechanism.
+- Siu Man recommends tree search with heuristics and aggressive pruning.
+- We can combat search algorithms that examine local degrees by making graphs highly non-uniform.
