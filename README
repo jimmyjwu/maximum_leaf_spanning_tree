@@ -1,17 +1,17 @@
 Maximum Leaf Spanning Tree Competition
 
 
-FILE_FORMAT				- Specifies the file format for inputs (graphs) and outputs (trees).
+FILE_FORMAT			- Specifies the file format for inputs (graphs) and outputs (trees).
 
-Papers/					- Contains useful academic research papers.
+Papers/				- Contains useful academic research papers.
 
-python/					- Contains instructor-provided tools
+python/				- Contains instructor-provided tools.
 	check_input.py 		- Checks that your input conforms to FILE_FORMAT.
 	check_output.py 	- Checks that your output conforms to FILE_FORMAT.
 	checker.py
 	config.py
 	graph.py 			- Contains useful graph-related classes.
-	graph_generator.py 	- [IN PROGRESS] Script for generating hard instances.
+	graph_generator.py 	- Our script for generating hard instances.
 	hard.in 			- Our hard instances (input graphs).
 	hard.out 			- Our hard instances (output trees).
 	reader.py

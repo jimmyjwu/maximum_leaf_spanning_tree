@@ -1,5 +1,6 @@
 The Toolbox
 br Jimmy Wu
-xx Amy Zhang
+xx Victor Zhu
+xx Lu Cheng
 xx Alton Zheng
 xx Eugene Wong
