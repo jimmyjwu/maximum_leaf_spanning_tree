@@ -43,7 +43,7 @@ def make_graph(edge_set):
 
 class Graph:
     def __init__(self, numNodes):
-        self.neighbors = [ [] for i in range(config.MAX_NUM_NODES) ]
+        self.neighbors = [ [] for i in range(numNodes) ]
         self.num_of_components = 0
         self.num_nodes = 0
         self.num_leaves = 0
