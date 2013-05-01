@@ -1,5 +1,25 @@
-Notes:
+NOTES:
 
-- The vast majority of algorithms will include some kind of greedy mechanism.
-- Siu Man recommends tree search with heuristics and aggressive pruning.
+- Every algorithm that the teams come up with will include some kind of greedy mechanism.
 - We can combat search algorithms that examine local degrees by making graphs highly non-uniform.
+- To solve instances as closely as possible, we shold design multiple algorithms.
+
+
+
+
+ALGORITHM IDEAS:
+
+1. Tree search (on the graph) with intelligent pruning heuristics
+	- Expands neighbor with highest degree
+	- Recommended by Siu-Man Chan
+	- Easily tricked by hard instances
+
+2. Joined leafy forest (Lu/Ravi paper)
+	- Builds a maximally leafy forest of the graph, then joins trees in the forest to make a leafy spanning tree
+	- Guarantees an approximation factor of 3
+	- More detailed pseudocode than Solis-Oba
+
+3. Joined leafy forest with expansion rules (Solis-Oba paper)
+	- Builds a leafy forest using "expansion rules", then joins the trees in the forest to make a leafy spanning tree
+	- Guarantees an approximation factor of 2
+	- Very vague pseudocode, may not be practical to implement
