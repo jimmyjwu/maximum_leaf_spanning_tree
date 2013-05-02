@@ -56,7 +56,14 @@ def create_hard_graph(number_of_nodes, construction_type):
 
 
 # Returns a tree with many leaves
-def create_leafy_tree(number_of_nodes, get_branch_and_leaf_factors):
+def create_leafy_tree(number_of_nodes):
+
+	def get_branch_and_leaf_factors():
+		degree = randint(2, MAXIMUM_DEGREE)
+		random_factor = randint(1, degree - 1)
+		leaf_factor = max(random_factor, degree - random_factor)
+		branch_factor = degree - leaf_factor
+		return [branch_factor, leaf_factor]
 
 	# Create an empty graph
 	tree = Graph(number_of_nodes)
@@ -104,7 +111,7 @@ def graph_containing_tree(tree):
 		parent = tree.neighbors[l][0]
 		degree_remaining[l] = len(tree.neighbors[parent]) - 1
 
-	all_possible_edges = set()	
+	all_possible_edges = set()
 	for u in my_leaves:
 		for v in my_leaves:
 			if u != v:
