@@ -17,7 +17,7 @@ generation of this graph, then the tree we built will be the MLST for the graph
 """
 
 # Define constants
-MAXIMUM_DEGREE = 5
+MAXIMUM_DEGREE = 10
 CONSTANT_CONSTRUCTION = 1234
 RANDOM_CONSTRUCTION = 2345
 
@@ -34,7 +34,7 @@ def create_hard_graph(number_of_nodes, construction_type):
 	# Define the degree function for randomized tree construction
 	def get_randomized_branch_and_leaf_factors():
 		degree = randint(2, MAXIMUM_DEGREE)
-		random_factor = random(1, degree)
+		random_factor = randint(1, degree - 1)
 		leaf_factor = max(random_factor, degree - random_factor)
 		branch_factor = degree - leaf_factor
 		return [branch_factor, leaf_factor]
@@ -62,7 +62,7 @@ def create_leafy_tree(number_of_nodes, get_branch_and_leaf_factors):
 	tree = Graph(number_of_nodes)
 
 	# Maintain a random-ordered list of unused nodes
-	unused_nodes = [i for i in range(1, number_of_nodes)]
+	unused_nodes = [i for i in range(0, number_of_nodes)]
 	shuffle(unused_nodes)
 
 	# Maintain a queue of nodes not yet expanded
@@ -75,13 +75,19 @@ def create_leafy_tree(number_of_nodes, get_branch_and_leaf_factors):
 	while len(nodes_to_expand) > 0:
 		current_node = nodes_to_expand.pop(0)
 
+		# Determine the expansion rules for this node
+		branch_factor, leaf_factor = get_branch_and_leaf_factors()
 
+		while leaf_factor > 0 and len(unused_nodes) > 0:
+			new_leaf = unused_nodes.pop()
+			tree.add_edge(Edge(current_node, new_leaf))
+			leaf_factor -= 1
 
-
-
-	# Populate the tree with appropriate edges
-	build_leafy_tree(0, number_of_nodes)
-
+		while branch_factor > 0 and len(unused_nodes) > 0:
+			new_branch = unused_nodes.pop()
+			tree.add_edge(Edge(current_node, new_branch))
+			nodes_to_expand.append(new_branch)
+			branch_factor -= 1
 
 	return tree
 
@@ -90,12 +96,30 @@ def create_leafy_tree(number_of_nodes, get_branch_and_leaf_factors):
 # Takes a tree and returns a general graph that contains the tree and obscures its leaves.
 def graph_containing_tree(tree):
 
-	# Maintain a random-ordered list of unused edges
-	unused_edges = get_unused_edges(tree)
-	shuffle(unused_edges)
-
 	# Add random edges to tree to obscure its leaves
+	my_leaves = get_leaves(tree)
 
+	degree_remaining = {}
+	for l in my_leaves:
+		parent = tree.neighbors[l][0]
+		degree_remaining[l] = len(tree.neighbors[parent]) - 1
+
+	all_possible_edges = set()	
+	for u in my_leaves:
+		for v in my_leaves:
+			if u != v:
+				all_possible_edges.add(Edge(u,v))
+	all_possible_edges = list(all_possible_edges)
+	shuffle(all_possible_edges)
+
+	num_edges = 2000 - len(get_edges(tree))
+	while num_edges > 0 and len(all_possible_edges) > 0:
+			edge = all_possible_edges.pop()
+			if degree_remaining[edge.ends[0]] > 0 and degree_remaining[edge.ends[1]] > 0:
+				tree.add_edge(edge)
+				num_edges -= 1
+				degree_remaining[edge.ends[0]] -= 1
+				degree_remaining[edge.ends[1]] -= 1
 
 	return tree
 
