@@ -6,6 +6,28 @@ NOTES:
 
 
 
+HARD INSTANCE IDEAS:
+
+First, build a leafy spanning tree. The following are ways to do this:
+1. Constant construction
+	- Build tree breadth-first (using queue)
+	- At each node, branch and leaf factors are constants (parameters of the entire tree instance)
+	- Two construction modes:
+		i. Leaf factor > branch factor (we suspect this will turn out better; can you see why?)
+		ii. Leaf factor < branch factor
+
+2. Randomized construction
+	- Build tree breadth-first (using queue)
+	- At each node, branch and leaf factors are random numbers
+		i. Total degree of node = branch factor + leaf factor
+		ii. Leaf factor > branch factor
+
+Then, add edges to the tree so as to turn it into a general graph, with the goal being to obscure the leaves within.
+	- Build a random-ordered list of edges between leaves
+	- Add edges from this list to the tree to turn it into a graph
+	- 
+
+
 
 ALGORITHM IDEAS:
 
