@@ -1,4 +1,6 @@
 from graph import *
+from graph_helper import *
+from constants import *
 
 # Outputs several graphs to a text file in the format given by instructors
 def output_graphs_to_new_file(graphs, file_name):
