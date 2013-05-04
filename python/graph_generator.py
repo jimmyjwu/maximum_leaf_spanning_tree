@@ -19,8 +19,9 @@ generation of this graph, then the tree we built will be the MLST for the graph
 """
 
 
-# Returns a hard graph instance
-def create_hard_graph(number_of_nodes, construction_type):
+# Returns a tree and its corresponding hard graph
+# construction_type specifies which node-expansion function to use when building tree
+def create_hard_tree_and_graph(number_of_nodes, construction_type):
 
 	# Define the degree function for constant tree construction
 	def get_constant_branch_and_leaf_factors():
@@ -49,18 +50,11 @@ def create_hard_graph(number_of_nodes, construction_type):
 	# Build a graph out of the tree
 	hard_graph = graph_containing_tree(leafy_tree)
 
-	return hard_graph
+	return leafy_tree, hard_graph
 
 
 # Returns a tree with many leaves
-def create_leafy_tree(number_of_nodes):
-
-	def get_branch_and_leaf_factors():
-		degree = randint(2, MAXIMUM_DEGREE)
-		random_factor = randint(1, degree - 1)
-		leaf_factor = max(random_factor, degree - random_factor)
-		branch_factor = degree - leaf_factor
-		return [branch_factor, leaf_factor]
+def create_leafy_tree(number_of_nodes, get_branch_and_leaf_factors):
 
 	# Create an empty graph
 	tree = Graph(number_of_nodes)
@@ -192,9 +186,4 @@ def create_sample_graph(number_of_nodes, number_of_edges):
 		sample_graph.add_edge(unused_edges.pop())
 
 	return sample_graph
-
-
-
-
-
 
