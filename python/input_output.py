@@ -3,6 +3,10 @@ from graph_helper import *
 from constants import *
 from collections import deque
 
+"""
+This file contains functions for reading graphs from files and writing them to files.
+"""
+
 # Reads and returns all graphs in the given text file
 # NOTE: Graphs must be in format given by instructors
 def input_graphs_from_file(file_name):

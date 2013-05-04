@@ -5,6 +5,8 @@ from input_output import *
 from random import shuffle, randint
 
 """
+This file generates pairs of (leafy tree, hard graph) for part 1 of the MLST project.
+
 Our objective is to build a "hard instance" graph such that our output spanning
 tree for the graph has more leaves than the outputs that anyone else achieves
 on the same graph (using their algorithms).
