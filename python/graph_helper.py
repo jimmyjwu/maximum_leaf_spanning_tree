@@ -1,9 +1,21 @@
 from graph import *
 from constants import *
+from random import shuffle
 
 """
 This file contains convenient helper methods for graphs.
 """
+
+# Returns a list of nodes in the graph
+def get_nodes(graph):
+	nodes = set()
+	edges = get_edges(graph)
+
+	for edge in edges:
+		nodes.add(edge.ends[0])
+		nodes.add(edge.ends[1])
+
+	return list(nodes)
 
 
 # Returns a list of edges in the graph
@@ -31,6 +43,7 @@ def get_unused_edges(graph):
 					unused_edge_set.add(Edge(current_node, other_node))
 
 	return list(unused_edge_set)
+
 
 # Returns a list of all nodes in the tree that are leaves (degree one)
 def get_leaves(tree):
