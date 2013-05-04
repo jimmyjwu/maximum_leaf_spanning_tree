@@ -1,4 +1,5 @@
 from graph import *
+from constants import *
 from random import shuffle, randint
 
 """
@@ -15,11 +16,6 @@ We conjecture (but cannot prove) that if we impose certain conditions on the
 generation of this graph, then the tree we built will be the MLST for the graph
 (or at least an exceptionally leafy tree).
 """
-
-# Define constants
-MAXIMUM_DEGREE = 10
-CONSTANT_CONSTRUCTION = 1234
-RANDOM_CONSTRUCTION = 2345
 
 
 # Returns a hard graph instance
@@ -103,15 +99,19 @@ def create_leafy_tree(number_of_nodes):
 # Takes a tree and returns a general graph that contains the tree and obscures its leaves.
 def graph_containing_tree(tree):
 
+	# Create a working copy of the tree (so we don't modify original)
+	tree_edges = get_edges(tree)
+	graph = make_graph(tree_edges)
+
 	# Add random edges to tree to obscure its leaves
-	leaves = get_leaves(tree)
+	leaves = get_leaves(graph)
 
 	# Maintain a hash that stores, for each leaf in the original tree, how many more edges
 	# can be added to it before its degree equals its parent's
 	degree_remaining = {}
 	for leaf in leaves:
-		parent = tree.neighbors[leaf][0]
-		degree_remaining[leaf] = len(tree.neighbors[parent]) - 1
+		parent = graph.neighbors[leaf][0]
+		degree_remaining[leaf] = len(graph.neighbors[parent]) - 1
 
 	# Maintain a random-sorted list of all possible edges between edges
 	unused_leaf_edges = set()
@@ -124,16 +124,16 @@ def graph_containing_tree(tree):
 
 	# Add random edges between leaves until graph has maximum allowed number of
 	# edges, or each original leaf has reached the degree of its parent
-	number_of_edges = 2000 - len(get_edges(tree))
+	number_of_edges = 2000 - len(get_edges(graph))
 	while number_of_edges > 0 and len(unused_leaf_edges) > 0:
 			edge = unused_leaf_edges.pop()
 			if degree_remaining[edge.ends[0]] > 0 and degree_remaining[edge.ends[1]] > 0:
-				tree.add_edge(edge)
+				graph.add_edge(edge)
 				number_of_edges -= 1
 				degree_remaining[edge.ends[0]] -= 1
 				degree_remaining[edge.ends[1]] -= 1
 
-	return tree
+	return graph
 
 
 # Returns a list of edges in the graph
