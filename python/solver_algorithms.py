@@ -34,7 +34,7 @@ def randomized_tree(graph):
 	best_tree = None
 
 	#Run N-iterations of randomized algorithm, save the best 
-	for i in range(0, 1000):
+	for i in range(0, 10000):
 		#Add all vertices of graph to disjoint set
 		disjoint_set = UnionFind()
 		disjoint_set.insert_objects(nodes)
@@ -58,11 +58,12 @@ def randomized_tree(graph):
 			#Check leaves when tree is complete, |E| = |V| - 1
 			if num_edges == graph.num_nodes - 1:
 				num_leaves = get_leaves(current_tree)
-
+				print len(num_leaves)
 				#Update best_tree if better num_leaves
 				if num_leaves > most_leaves:
 					most_leaves = num_leaves
 					best_tree = current_tree
+					break
 
 	return best_tree
 
