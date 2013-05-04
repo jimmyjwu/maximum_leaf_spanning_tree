@@ -104,27 +104,32 @@ def create_leafy_tree(number_of_nodes):
 def graph_containing_tree(tree):
 
 	# Add random edges to tree to obscure its leaves
-	my_leaves = get_leaves(tree)
+	leaves = get_leaves(tree)
 
+	# Maintain a hash that stores, for each leaf in the original tree, how many more edges
+	# can be added to it before its degree equals its parent's
 	degree_remaining = {}
-	for l in my_leaves:
-		parent = tree.neighbors[l][0]
-		degree_remaining[l] = len(tree.neighbors[parent]) - 1
+	for leaf in leaves:
+		parent = tree.neighbors[leaf][0]
+		degree_remaining[leaf] = len(tree.neighbors[parent]) - 1
 
-	all_possible_edges = set()
-	for u in my_leaves:
-		for v in my_leaves:
-			if u != v:
-				all_possible_edges.add(Edge(u,v))
-	all_possible_edges = list(all_possible_edges)
-	shuffle(all_possible_edges)
+	# Maintain a random-sorted list of all possible edges between edges
+	unused_leaf_edges = set()
+	for leaf_1 in leaves:
+		for leaf_2 in leaves:
+			if leaf_1 != leaf_2:
+				unused_leaf_edges.add(Edge(leaf_1, leaf_2))
+	unused_leaf_edges = list(unused_leaf_edges)
+	shuffle(unused_leaf_edges)
 
-	num_edges = 2000 - len(get_edges(tree))
-	while num_edges > 0 and len(all_possible_edges) > 0:
-			edge = all_possible_edges.pop()
+	# Add random edges between leaves until graph has maximum allowed number of
+	# edges, or each original leaf has reached the degree of its parent
+	number_of_edges = 2000 - len(get_edges(tree))
+	while number_of_edges > 0 and len(unused_leaf_edges) > 0:
+			edge = unused_leaf_edges.pop()
 			if degree_remaining[edge.ends[0]] > 0 and degree_remaining[edge.ends[1]] > 0:
 				tree.add_edge(edge)
-				num_edges -= 1
+				number_of_edges -= 1
 				degree_remaining[edge.ends[0]] -= 1
 				degree_remaining[edge.ends[1]] -= 1
 
