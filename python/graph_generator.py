@@ -21,31 +21,29 @@ generation of this graph, then the tree we built will be the MLST for the graph
 
 # Returns a tree and its corresponding hard graph
 # construction_type specifies which node-expansion function to use when building tree
-def create_hard_tree_and_graph(number_of_nodes, construction_type):
+def create_hard_tree_and_graph(construction_type):
 
 	# Define the degree function for constant tree construction
 	def get_constant_branch_and_leaf_factors():
-		branch_factor = 4
-		leaf_factor = 5
-		return [branch_factor, leaf_factor]
+		return BRANCH_FACTOR, LEAF_FACTOR
 
 	# Define the degree function for randomized tree construction
 	def get_randomized_branch_and_leaf_factors():
-		degree = randint(2, MAXIMUM_DEGREE)
+		degree = randint(MINIMUM_DEGREE, MAXIMUM_DEGREE)
 		random_factor = randint(1, degree - 1)
 		leaf_factor = max(random_factor, degree - random_factor)
 		branch_factor = degree - leaf_factor
-		return [branch_factor, leaf_factor]
+		return branch_factor, leaf_factor
 
 	# Select the correct degree function
 	degree_function = None
-	if construction_type == CONSTANT_CONSTRUCTION:
+	if construction_type == CONSTANT:
 		degree_function = get_constant_branch_and_leaf_factors
-	elif construction_type == RANDOM_CONSTRUCTION:
+	elif construction_type == RANDOM:
 		degree_function = get_randomized_branch_and_leaf_factors
 
 	# Build a leafy tree
-	leafy_tree = create_leafy_tree(number_of_nodes, degree_function)
+	leafy_tree = create_leafy_tree(MAXIMUM_NUMBER_OF_NODES, degree_function)
 
 	# Build a graph out of the tree
 	hard_graph = graph_containing_tree(leafy_tree)
@@ -119,12 +117,12 @@ def graph_containing_tree(tree):
 
 	# Add random edges between leaves until graph has maximum allowed number of
 	# edges, or each original leaf has reached the degree of its parent
-	number_of_edges = 2000 - len(get_edges(graph))
-	while number_of_edges > 0 and len(unused_leaf_edges) > 0:
+	remaining_number_of_edges = MAXIMUM_NUMBER_OF_EDGES - len(get_edges(graph))
+	while remaining_number_of_edges > 0 and len(unused_leaf_edges) > 0:
 			edge = unused_leaf_edges.pop()
 			if degree_remaining[edge.ends[0]] > 0 and degree_remaining[edge.ends[1]] > 0:
 				graph.add_edge(edge)
-				number_of_edges -= 1
+				remaining_number_of_edges -= 1
 				degree_remaining[edge.ends[0]] -= 1
 				degree_remaining[edge.ends[1]] -= 1
 
