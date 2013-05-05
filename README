@@ -10,16 +10,20 @@ python/				- Contains instructor-provided tools.
 	check_output.py 	- Checks that your output conforms to FILE_FORMAT.
 	checker.py
 	config.py
-	graph.py 			- Contains useful graph-related classes.
-	graph_generator.py 	- Our script for generating hard instances.
-	hard.in 			- Our hard instances (input graphs).
-	hard.out 			- Our hard instances (output trees).
+	constants.py 			- Contains constant values used in our functions.
+	disjointsets.py 		- Contains an implementation of the disjoint sets data structure.
+	graph.py 				- Contains useful graph-related classes.
+	graph_generator.py 		- Our primary module for generating hard instances.
+	graph_helper.py 		- Contains useful helper methods for dealing with graphs.
+	graph_solver.py 		- Our primary module for generating leafy spanning trees from graphs.
+	hard.all.in 			- Every team's hard instances (input graphs).
+	hard.in 				- Our hard instances (input graphs).
+	hard.out 				- Our hard instances (output trees).
+	input_output.py 		- Contains functions for reading and writing graphs from/to files.
 	reader.py
-	README-python 		- Instructions for using the Python format checkers.
-	sample_hard.in 		- Sample hard instances (input graphs).
-	sample_hard.out 	- Sample hard instances (output trees).
-	sample_team.txt 	- Sample team member list.
-	team.txt 			- Our team member list.
+	README-python 			- Instructions for using the Python format checkers.
+	solver_algorithms.py 	- Contains all our algorithms for solving graphs.
+	team.txt 				- Our team member list.
 
 mlst.in 	- contains sample inputs.
 mlst.out 	- contains sample outputs corresponding to the sample inputs.
