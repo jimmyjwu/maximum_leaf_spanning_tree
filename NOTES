@@ -25,7 +25,7 @@ First, build a leafy spanning tree. The following are ways to do this:
 Then, add edges to the tree so as to turn it into a general graph, with the goal being to obscure the leaves within.
 	- Build a random-ordered list of edges between leaves
 	- Add edges from this list to the tree to turn it into a graph
-	- 
+	- Enforce the policy that no leaf eventually has higher degree than its parent
 
 
 
@@ -45,3 +45,7 @@ ALGORITHM IDEAS:
 	- Builds a leafy forest using "expansion rules", then joins the trees in the forest to make a leafy spanning tree
 	- Guarantees an approximation factor of 2
 	- Very vague pseudocode, may not be practical to implement
+
+4. Randomized Kruskal's algorithm
+	- Randomly selects edges and adds them if doing so does not induce a cycle
+	- Repeat procedure many times and take the best output (results in normal distribution of leaf numbers, so not efficient if aiming for very close approximation)
