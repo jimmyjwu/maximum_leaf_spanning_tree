@@ -72,7 +72,50 @@ def randomized_tree(graph):
 
 	return best_tree
 
+# Implements the Lu-Ravi algorithm in the paper "Approximating Maximum Leaf
+# Spanning Trees in Almost Linear Time"
+def joined_forest_tree(graph):
 
+	
+
+
+
+
+	return maximally_leafy_forest(graph)	# Temporarily return the leafy forest
+
+def maximally_leafy_forest(graph):
+	# Initialization
+	G = create_copy(graph)
+	E = get_edges(G)
+	V = get_nodes(G)
+	S = {}		# S maps a node to a set of nodes
+	d = {}		# d maps a node to a number 
+	F = set()
+
+	for v in V:
+		S[v] = set([v])
+		d[v] = 0
+
+	for v in V:
+		S_prime = {}		# S_prime maps a node to a set of nodes
+		d_prime = 0
+
+		for u in G.neighbors[v]:
+			if u not in S[v] and S[u] not in S_prime.values():
+				d_prime += 1
+				S_prime[u] = S[u]
+
+		if d[v] + d_prime >= 3:
+			for u in S_prime:
+				F.add(Edge(u,v))
+				S[v] = S[v].union(S[u])
+				S[u] = S[v].union(S[u])
+				d[u] = d[u] + 1
+				d[v] = d[v] + 1
+
+	print(d)
+
+	return F
 
 # YOUR CLEVER ALGORITHMS HERE
 
