@@ -54,7 +54,8 @@ def get_leaves(tree):
 
 	return leaves
 
-def create_copy_of_graph(graph):
+# Returns a deep copy of the given graph
+def create_copy(graph):
 	edges = get_edges(graph)
 	return make_graph(edges)
 
