@@ -54,6 +54,10 @@ def get_leaves(tree):
 
 	return leaves
 
+def create_copy_of_graph(graph):
+	edges = get_edges(graph)
+	return make_graph(edges)
+
 
 # Returns a random graph of given size
 def create_sample_graph(number_of_nodes, number_of_edges):
