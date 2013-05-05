@@ -1,3 +1,4 @@
+import util
 from graph import *
 from graph_helper import *
 from constants import *
@@ -33,6 +34,7 @@ def randomized_tree(graph):
 	most_leaves = 0
 	best_tree = None
 
+	# counter = util.Counter()
 	#Run N-iterations of randomized algorithm, save the best 
 	for i in range(0, 10000):
 		#Add all vertices of graph to disjoint set
@@ -58,12 +60,15 @@ def randomized_tree(graph):
 			#Check leaves when tree is complete, |E| = |V| - 1
 			if num_edges == graph.num_nodes - 1:
 				num_leaves = get_leaves(current_tree)
-				print len(num_leaves)
+				# counter[len(num_leaves)] += 1
 				#Update best_tree if better num_leaves
 				if num_leaves > most_leaves:
 					most_leaves = num_leaves
 					best_tree = current_tree
-					break
+				break
+
+	# for i in range(0, graph.num_nodes):
+	# 	print counter[i]
 
 	return best_tree
 
