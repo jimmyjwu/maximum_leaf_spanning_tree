@@ -88,32 +88,31 @@ def maximally_leafy_forest(graph):
 	G = create_copy(graph)
 	E = get_edges(G)
 	V = get_nodes(G)
-	S = {}		# S maps a node to a set of nodes
+	S = UnionFind()		# S maps a node to a set of nodes
 	d = {}		# d maps a node to a number 
 	F = set()
 
 	for v in V:
-		S[v] = set([v])
+		S.find(v)
 		d[v] = 0
 
 	for v in V:
-		S_prime = {}		# S_prime maps a node to a set of nodes
+		# S_prime = UnionFind()	# S_prime maps a node to a set of nodes
+		S_prime = {}	# Maps vertex to union-find set index
 		d_prime = 0
 
 		for u in G.neighbors[v]:
-			if u not in S[v] and S[u] not in S_prime.values():
+			if S.find(u) != S.find(v) and S.find(u) not in S_prime.values():
 				d_prime += 1
-				S_prime[u] = S[u]
+				S_prime[u] = S.find(u)
 
 		if d[v] + d_prime >= 3:
 			for u in S_prime:
+				# print u
 				F.add(Edge(u,v))
-				S[v] = S[v].union(S[u])
-				S[u] = S[v].union(S[u])
-				d[u] = d[u] + 1
-				d[v] = d[v] + 1
-
-	print(d)
+				S.union(u, v)
+				d[u] += 1
+				d[v] += 1
 
 	return F
 
