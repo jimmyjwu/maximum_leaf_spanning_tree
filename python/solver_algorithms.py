@@ -28,7 +28,7 @@ def randomized_tree(graph):
 	best_tree = None
 
 	# Run N iterations of randomized algorithm, save the best 
-	for i in range(0, 10000):
+	for i in range(0, 1000):
 
 		# Add all vertices of graph to disjoint set
 		disjoint_set = UnionFind()
@@ -160,7 +160,8 @@ def joined_forest_tree(graph):
 # Maintain a list of all (algorithm name, algorithm function) so that they can be
 # systematically called from graph_solver.py
 ALGORITHMS = [
-	('Joined Forest Tree', joined_forest_tree)
+	('joined forest tree', joined_forest_tree),
+	('randomized tree', randomized_tree)
 ]
 
 
