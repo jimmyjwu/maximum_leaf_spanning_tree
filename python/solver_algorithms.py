@@ -68,44 +68,52 @@ def randomized_tree(graph):
 # Spanning Trees in Almost Linear Time"
 def joined_forest_tree(graph):
 
-	
+	def maximally_leafy_forest(graph):
+		# Initialization
+		G = create_copy(graph)
+		E = get_edges(G)
+		V = get_nodes(G)
+		S = UnionFind()
+		d = {}
+		F = set()
+
+		for v in V:
+			S.find(v)
+			d[v] = 0
+
+		for v in V:
+			S_prime = {}	# Maps vertex to union-find set index
+			d_prime = 0
+			for u in G.neighbors[v]:
+				if S.find(u) != S.find(v) and S.find(u) not in S_prime.values():
+					d_prime += 1
+					S_prime[u] = S.find(u)
+			if d[v] + d_prime >= 3:
+				for u in S_prime:
+					F.add(Edge(u,v))
+					S.union(u, v)
+					d[u] += 1
+					d[v] += 1
+
+		return F
+
+	leafy_forest = maximally_leafy_forest(graph)
+
+	unused_edges = get_edge_difference(graph, leafy_forest)
+	leafy_spanning_tree = create_spanning_tree_from_forest(leafy_forest, unused_edges)
+
+	return leafy_spanning_tree
+
+
+# Takes a leafy forest (a Graph instance composed of one or more disjoint trees) and
+# a list of unused edges in the original graph.
+# Returns a leafy spanning tree of the original graph.
+def create_spanning_tree_from_forest(forest, unused_edges):
 
 
 
-	return maximally_leafy_forest(graph)	# Temporarily return the leafy forest
+	return
 
-
-
-def maximally_leafy_forest(graph):
-	# Initialization
-	G = create_copy(graph)
-	E = get_edges(G)
-	V = get_nodes(G)
-	S = UnionFind()
-	d = {}
-	F = set()
-
-	for v in V:
-		S.find(v)
-		d[v] = 0
-
-	for v in V:
-		S_prime = {}	# Maps vertex to union-find set index
-		d_prime = 0
-
-		for u in G.neighbors[v]:
-			if S.find(u) != S.find(v) and S.find(u) not in S_prime.values():
-				d_prime += 1
-				S_prime[u] = S.find(u)
-
-		if d[v] + d_prime >= 3:
-			for u in S_prime:
-				F.add(Edge(u,v))
-				S.union(u, v)
-				d[u] += 1
-				d[v] += 1
-
-	return F
 
 # YOUR CLEVER ALGORITHMS HERE
 
@@ -113,5 +121,5 @@ def maximally_leafy_forest(graph):
 # Maintain a list of all (algorithm name, algorithm function) so that they can be
 # systematically called from graph_solver.py
 ALGORITHMS = [
-	('Maximally Leafy Forest', maximally_leafy_forest)
+	('Joined Forest Tree', joined_forest_tree)
 ]
