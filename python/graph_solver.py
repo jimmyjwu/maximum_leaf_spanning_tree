@@ -8,9 +8,6 @@ from solver_algorithms import *
 This file extracts leafy spanning trees from graphs, for part 2 of the MLST project.
 """
 
-our_graphs = []
-our_trees = []
-
 # Takes a list of graphs and returns the leafiest spanning tree we can find
 # by running them through all of our algorithms
 def find_leafy_spanning_trees(graphs):
@@ -26,17 +23,15 @@ def find_leafy_spanning_trees(graphs):
 	leafy_spanning_trees = []
 
 	for graph in graphs:
-		best_tree = find_leafy_spanning_tree(graph)
+		best_tree = find_leafy_spanning_tree(graph, our_graphs, our_trees)
 		leafy_spanning_trees.append(best_tree)
 
 	return leafy_spanning_trees
 
 
-
-
 # Takes a graph and returns the leafiest spanning tree we can find by running
 # it through all of our algorithms
-def find_leafy_spanning_tree(graph):
+def find_leafy_spanning_tree(graph, our_graphs=[], our_trees=[]):
 
 	# Maintain a record of bests so far
 	best_tree = None
@@ -49,7 +44,6 @@ def find_leafy_spanning_tree(graph):
 			best_tree = our_trees[i]
 			best_leaf_count = our_trees[i].num_leaves
 			best_algorithm = 'our own solution'
-
 
 	# Test for line
 	if is_line(graph):
