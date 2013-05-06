@@ -52,7 +52,7 @@ def randomized_tree(graph):
 
 			# Check leaves when tree is complete, |E| = |V| - 1
 			if num_edges == graph.num_nodes - 1:
-				num_leaves = get_leaves(current_tree)
+				num_leaves = len(get_leaves(current_tree))
 				
 				# Update best_tree if better num_leaves
 				if num_leaves > most_leaves:
@@ -160,8 +160,7 @@ def joined_forest_tree(graph):
 # Maintain a list of all (algorithm name, algorithm function) so that they can be
 # systematically called from graph_solver.py
 ALGORITHMS = [
-	('joined forest tree', joined_forest_tree),
-	('randomized tree', randomized_tree)
+	('joined forest tree', joined_forest_tree)
 ]
 
 

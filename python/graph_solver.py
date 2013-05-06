@@ -77,7 +77,7 @@ def find_leafy_spanning_tree(graph):
 			best_algorithm = algorithm_name
 
 	# Log the best solution
-	print('Best solution:\tLeaves: ' + best_leaf_count + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: ' + algorithm_name)
+	print('Best solution:\tLeaves: ' + str(best_leaf_count) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: ' + best_algorithm)
 
 	return best_tree
 
