@@ -22,6 +22,11 @@ MAXIMUM_NUMBER_OF_EDGES = 2000
 OUR_GRAPHS = 'hard.in'
 OUR_TREES = 'hard.out'
 ALL_GRAPHS = 'hard.all.v3.in'
+MANUALLY_SOLVED_GRAPHS = 'manually_solved.in'
+MANUALLY_SOLVED_TREES = 'manually_solved.out'
 
 # Spanning tree algorithm parameters
-NUMBER_OF_RANDOM_RUNS = 10000
+NUMBER_OF_RANDOM_RUNS = 100
+
+# Parameter to decide which graphs are small enough to be manually solved
+SMALL_NUMBER_OF_EDGES = 25
