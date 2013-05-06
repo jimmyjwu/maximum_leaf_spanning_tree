@@ -2,11 +2,29 @@ from graph import *
 from constants import *
 from random import shuffle
 import networkx as nx
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 """
 This file contains convenient helper methods for graphs.
 """
+
+# Returns whether the two given graph are equivalent (contain same edges and nodes)
+def are_equivalent_graphs(graph_1, graph_2):
+
+	# Test for same node sets
+	nodes_1 = set(get_nodes(graph_1))
+	nodes_2 = set(get_nodes(graph_2))
+	if nodes_1 != nodes_2:
+		return False
+
+	# Test for same edge sets
+	edges_1 = set(get_edges(graph_1))
+	edges_2 = set(get_edges(graph_2))
+	if edges_1 != edges_2:
+		return False
+
+	return True
+
 
 # Returns a list of nodes in the graph
 def get_nodes(graph):
