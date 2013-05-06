@@ -22,3 +22,6 @@ MAXIMUM_NUMBER_OF_EDGES = 2000
 OUR_GRAPHS = 'hard.in'
 OUR_TREES = 'hard.out'
 ALL_GRAPHS = 'hard.all.v3.in'
+
+# Spanning tree algorithm parameters
+NUMBER_OF_RANDOM_RUNS = 10000
