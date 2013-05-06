@@ -1,6 +1,8 @@
 from graph import *
 from constants import *
 from random import shuffle
+import networkx as nx
+import matplotlib.pyplot as plt
 
 """
 This file contains convenient helper methods for graphs.
@@ -54,16 +56,19 @@ def get_leaves(tree):
 
 	return leaves
 
+
 # Returns a deep copy of the given graph
 def create_copy(graph):
 	edges = get_edges(graph)
 	return make_graph(edges)
+
 
 # Returns whether the given graph is a tree
 def is_tree(graph):
 	number_of_nodes = len(get_nodes(graph))
 	number_of_edges = len(get_edges(graph))
 	return number_of_edges == number_of_nodes - 1
+
 
 # Returns whether the given graph is a line
 def is_line(graph):
@@ -86,6 +91,16 @@ def is_line(graph):
 
 	# Passed tests; graph is a line
 	return True
+
+
+# Plots a graph
+def plot_graph(graph):
+	G = nx.Graph()
+	G.add_nodes_from(get_nodes(graph))
+	for edge in get_edges(graph):
+		G.add_edge(edge.ends[0], edge.ends[1])
+	nx.draw(G)
+	plt.show()
 
 
 # Returns a random graph of given size
