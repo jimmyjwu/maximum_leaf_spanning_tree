@@ -30,7 +30,7 @@ def randomized_tree(graph):
 	best_tree = None
 
 	# Run N iterations of randomized algorithm, save the best 
-	for i in range(0, 1000):
+	for i in range(0, 10000):
 
 		# Add all vertices of graph to disjoint set
 		disjoint_set = UnionFind()
