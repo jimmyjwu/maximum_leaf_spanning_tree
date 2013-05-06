@@ -55,24 +55,29 @@ def inverseAckerman(inp):
 
 
 class UnionFind:
+    """
+    Create an empty union find data structure.
+    """
     def __init__(self):
-        '''\
-Create an empty union find data structure.'''
         self.num_weights = {}
         self.parent_pointers = {}
         self.num_to_objects = {}
         self.objects_to_num = {}
         self.__repr__ = self.__str__
+
+    """
+    Insert a sequence of objects into the structure.  All must be Python hashable.
+    """
     def insert_objects(self, objects):
-        '''\
-Insert a sequence of objects into the structure.  All must be Python hashable.'''
         for object in objects:
-            self.find(object);
+            self.find(object)
+
+    """
+    Find the root of the set that an object is in.
+    If the object was not known, will make it known, and it becomes its own set.
+    Object must be Python hashable.
+    """
     def find(self, object):
-        '''\
-Find the root of the set that an object is in.
-If the object was not known, will make it known, and it becomes its own set.
-Object must be Python hashable.'''
         if not object in self.objects_to_num:
             obj_num = len(self.objects_to_num)
             self.num_weights[obj_num] = 1
@@ -88,11 +93,14 @@ Object must be Python hashable.'''
         for i in stk:
             self.parent_pointers[i] = par
         return self.num_to_objects[par]
+
+
+    """
+    Combine the sets that contain the two objects given.
+    Both objects must be Python hashable.
+    If either or both objects are unknown, will make them known, and combine them.
+    """
     def union(self, object1, object2):
-        '''\
-Combine the sets that contain the two objects given.
-Both objects must be Python hashable.
-If either or both objects are unknown, will make them known, and combine them.'''
         o1p = self.find(object1)
         o2p = self.find(object2)
         if o1p != o2p:
@@ -105,11 +113,13 @@ If either or both objects are unknown, will make them known, and combine them.''
             self.num_weights[on1] = w1+w2
             del self.num_weights[on2]
             self.parent_pointers[on2] = on1
+    
+    """
+    Included for testing purposes only.
+    All information needed from the union find data structure can be attained
+    using find.
+    """
     def __str__(self):
-        '''\
-Included for testing purposes only.
-All information needed from the union find data structure can be attained
-using find.'''
         sets = {}
         for i in xrange(len(self.objects_to_num)):
             sets[i] = []
@@ -120,6 +130,7 @@ using find.'''
             if i:
                 out.append(repr(i))
         return ', '.join(out)
+
 
 if __name__ == '__main__':
     print "Testing..."
