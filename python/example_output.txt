@@ -1,0 +1,132 @@
+Graph contains only 10 edges. Recommend manually solving.
+Best solution:	Leaves: 5	/	7	Algorithm: joined forest tree
+Graph contains only 13 edges. Recommend manually solving.
+Best solution:	Leaves: 6	/	8	Algorithm: randomized tree			8:	6 -> 5
+Graph contains only 7 edges. Recommend manually solving.
+Best solution:	Leaves: 4	/	6	Algorithm: joined forest tree
+Graph contains only 21 edges. Recommend manually solving.
+Best solution:	Leaves: 11	/	20	Algorithm: randomized tree			20: 11 -> 10
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 73	/	100	Algorithm: randomized tree			100: 73 -> 65
+Best solution:	Leaves: 92	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 79	/	90	Algorithm: joined forest tree
+Best solution:	Leaves: 67	/	91	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 50	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 50	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 66	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 90	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 65	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 60	/	83	Algorithm: joined forest tree
+Best solution:	Leaves: 43	/	81	Algorithm: joined forest tree
+Best solution:	Leaves: 68	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 28	/	64	Algorithm: joined forest tree
+Best solution:	Leaves: 24	/	32	Algorithm: joined forest tree
+Best solution:	Leaves: 60	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 76	/	97	Algorithm: joined forest tree
+Best solution:	Leaves: 50	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 50	/	91	Algorithm: joined forest tree
+Best solution:	Leaves: 70	/	74	Algorithm: joined forest tree
+Graph contains only 20 edges. Recommend manually solving.
+Best solution:	Leaves: 7	/	11	Algorithm: randomized tree			11: 7 -> 6
+Graph contains only 12 edges. Recommend manually solving.
+Best solution:	Leaves: 5	/	6	Algorithm: joined forest tree
+Best solution:	Leaves: 12	/	22	Algorithm: joined forest tree
+Best solution:	Leaves: 39	/	40	Algorithm: joined forest tree
+Best solution:	Leaves: 81	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 83	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 80	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 91	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 48	/	85	Algorithm: joined forest tree
+Best solution:	Leaves: 48	/	85	Algorithm: joined forest tree
+Best solution:	Leaves: 93	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 91	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 87	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 61	/	64	Algorithm: joined forest tree
+Best solution:	Leaves: 38	/	40	Algorithm: joined forest tree
+Best solution:	Leaves: 66	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 80	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 80	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 87	/	89	Algorithm: joined forest tree
+Best solution:	Leaves: 63	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 93	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 82	/	84	Algorithm: joined forest tree
+Best solution:	Leaves: 50	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 76	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 81	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 82	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 62	/	63	Algorithm: joined forest tree
+Best solution:	Leaves: 51	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 83	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 91	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 85	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 88	/	100	Algorithm: randomized tree			100: 88 -> 87
+Best solution:	Leaves: 82	/	94	Algorithm: randomized tree			94: 82 -> 80
+Best solution:	Leaves: 95	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 90	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 85	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 27	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 93	/	100	Algorithm: joined forest tree
+Graph contains only 15 edges. Recommend manually solving.
+Best solution:	Leaves: 7	/	10	Algorithm: randomized tree			10: 7 -> 5
+Best solution:	Leaves: 12	/	22	Algorithm: randomized tree			22: 12 -> 9
+Best solution:	Leaves: 88	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 48	/	91	Algorithm: joined forest tree
+Best solution:	Leaves: 42	/	98	Algorithm: joined forest tree
+Best solution:	Leaves: 14	/	24	Algorithm: joined forest tree
+Best solution:	Leaves: 89	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 65	/	81	Algorithm: joined forest tree
+Best solution:	Leaves: 98	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 92	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 76	/	81	Algorithm: joined forest tree
+Best solution:	Leaves: 40	/	65	Algorithm: joined forest tree
+Best solution:	Leaves: 85	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 38	/	40	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 91	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 72	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 71	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 70	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 64	/	97	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 62	/	63	Algorithm: joined forest tree
+Best solution:	Leaves: 36	/	94	Algorithm: joined forest tree
+Best solution:	Leaves: 68	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 76	/	93	Algorithm: joined forest tree
+Best solution:	Leaves: 88	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 55	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 93	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 34	/	40	Algorithm: joined forest tree
+Best solution:	Leaves: 51	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 93	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 67	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 93	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 75	/	81	Algorithm: joined forest tree
+Best solution:	Leaves: 96	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 96	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 25	/	39	Algorithm: joined forest tree
+Best solution:	Leaves: 42	/	68	Algorithm: joined forest tree
+Best solution:	Leaves: 52	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 90	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 90	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 2	/	100	Algorithm: detected line
+Best solution:	Leaves: 47	/	92	Algorithm: joined forest tree
+Best solution:	Leaves: 41	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 91	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 86	/	96	Algorithm: joined forest tree
+Best solution:	Leaves: 86	/	95	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 99	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 27	/	36	Algorithm: joined forest tree
+Graph contains only 7 edges. Recommend manually solving.
+Best solution:	Leaves: 4	/	6	Algorithm: joined forest tree
+Best solution:	Leaves: 5	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 91	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 43	/	44	Algorithm: joined forest tree
+Best solution:	Leaves: 50	/	99	Algorithm: joined forest tree
+Best solution:	Leaves: 63	/	100	Algorithm: joined forest tree
+Best solution:	Leaves: 62	/	63	Algorithm: joined forest tree
+Best solution:	Leaves: 67	/	100	Algorithm: joined forest tree
