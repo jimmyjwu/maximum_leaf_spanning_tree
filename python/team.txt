@@ -1,6 +1,6 @@
-The Toolbox
+The Voice of EECS
+jr Eugene Wong
 br Jimmy Wu
-xx Victor Zhu
-xx Lu Cheng
-xx Alton Zheng
-xx Eugene Wong
+dh Alton Zheng-Xie
+ti Victor Zhu
+pp Lu Cheng
