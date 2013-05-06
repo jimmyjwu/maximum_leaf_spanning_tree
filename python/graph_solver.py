@@ -53,12 +53,12 @@ def find_leafy_spanning_tree(graph):
 
 	# Test for line
 	if is_line(graph):
-		print('Best solution:\tLeaves: ' + str(graph.num_leaves) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected line')
+		print('Best solution:\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected line')
 		return graph
 
 	# Test for tree
 	if is_tree(graph):
-		print('Best solution:\tLeaves: ' + str(graph.num_leaves) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected tree')
+		print('Best solution:\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected tree')
 		return graph
 
 	# Test for small input size

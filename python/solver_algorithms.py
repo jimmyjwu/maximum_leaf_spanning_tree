@@ -19,11 +19,13 @@ in the ALGORITHMS list. This allows them to be called from graph_solver.py.
 """
 
 def randomized_tree(graph):
+	
 	# Fill out graph attributes
 	graph.search()
 	nodes = get_nodes(graph)
-
 	edges = get_edges(graph)
+
+	# Bests so far
 	most_leaves = 0
 	best_tree = None
 
@@ -38,7 +40,7 @@ def randomized_tree(graph):
 		shuffle(edges)
 
 		num_edges = 0
-		current_tree = Graph(graph.num_nodes)
+		current_tree = Graph(MAXIMUM_NUMBER_OF_NODES)
 
 		# Build graph
 		for edge in edges:
@@ -51,7 +53,7 @@ def randomized_tree(graph):
 				num_edges += 1
 
 			# Check leaves when tree is complete, |E| = |V| - 1
-			if num_edges == graph.num_nodes - 1:
+			if num_edges == len(nodes) - 1:
 				num_leaves = len(get_leaves(current_tree))
 				
 				# Update best_tree if better num_leaves
@@ -160,7 +162,8 @@ def joined_forest_tree(graph):
 # Maintain a list of all (algorithm name, algorithm function) so that they can be
 # systematically called from graph_solver.py
 ALGORITHMS = [
-	('joined forest tree', joined_forest_tree)
+	('joined forest tree', joined_forest_tree),
+	('randomized tree', randomized_tree)
 ]
 
 
