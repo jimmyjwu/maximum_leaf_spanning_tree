@@ -25,8 +25,13 @@ def input_graphs_from_file(file_name):
 	# Maintain a list of graphs
 	graphs = []
 
+	# Read the number of graphs in file
+	if len(lines) > 0:
+		number_of_graphs = int(lines.popleft())
+	else:
+		return []
+
 	# Read lines in nested structure
-	number_of_graphs = int(lines.popleft())
 	for _ in range(number_of_graphs):
 		edges = []
 		number_of_edges = int(lines.popleft())
