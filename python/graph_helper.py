@@ -59,6 +59,34 @@ def create_copy(graph):
 	edges = get_edges(graph)
 	return make_graph(edges)
 
+# Returns whether the given graph is a tree
+def is_tree(graph):
+	number_of_nodes = len(get_nodes(graph))
+	number_of_edges = len(get_edges(graph))
+	return number_of_edges == number_of_nodes - 1
+
+# Returns whether the given graph is a line
+def is_line(graph):
+	# If not a tree, no chance it's a line
+	if not is_tree(graph):
+		return False
+
+	# Graph is a line iff it is a tree with two nodes having degree 1 and all
+	# others having degree 2
+	nodes = get_nodes(graph)
+	leaf_count = 0
+	for node in nodes:
+		degree = len(graph.neighbors[node])
+		if degree == 1:
+			leaf_count += 1
+			if leaf_count > 2:
+				return False
+		elif degree != 2:
+			return False
+
+	# Passed tests; graph is a line
+	return True
+
 
 # Returns a random graph of given size
 def create_sample_graph(number_of_nodes, number_of_edges):
