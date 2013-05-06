@@ -18,4 +18,7 @@ LEAF_FACTOR = 5
 MAXIMUM_NUMBER_OF_NODES = 100
 MAXIMUM_NUMBER_OF_EDGES = 2000
 
-
+# File names
+OUR_GRAPHS = 'hard.in'
+OUR_TREES = 'hard.out'
+ALL_GRAPHS = 'hard.all.v3.in'
