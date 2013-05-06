@@ -25,6 +25,13 @@ def are_equivalent_graphs(graph_1, graph_2):
 
 	return True
 
+# Returns whether the first given graph is a subgraph of the second
+def is_subgraph(graph_1, graph_2):
+	edges_1 = set(get_edges(graph_1))
+	edges_2 = set(get_edges(graph_2))
+
+	return edges_1 <= edges_2
+
 
 # Returns a list of nodes in the graph
 def get_nodes(graph):
