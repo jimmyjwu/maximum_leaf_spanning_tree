@@ -95,7 +95,54 @@ def joined_forest_tree(graph):
 					d[u] += 1
 					d[v] += 1
 
-		return F
+		return make_graph(F)
+
+	# Takes a leafy forest (a Graph instance composed of one or more disjoint trees) and
+	# a list of unused edges in the original graph.
+	# Returns a leafy spanning tree of the original graph.
+	def create_spanning_tree_from_forest(forest, unused_edges):
+
+		def is_leaf(node):
+			return len(forest.neighbors[node]) == 1
+
+		spanning_tree = create_copy(forest)
+
+		nodes = get_nodes(forest)
+		edges = get_edges(forest)
+
+		# Initialize meta-graph
+		connected_components = UnionFind()
+		connected_components.insert_objects(nodes)
+		for edge in edges:
+			connected_components.union(edge.ends[0], edge.ends[1])
+
+		# Sort unused edges by tier as follows:
+		# 1. Edge from internal node to internal node
+		# 2. Edge from internal node to leaf
+		# 3. Edge from leaf to leaf
+		internal_to_internal_edges = []
+		internal_to_leaf_edges = []
+		leaf_to_leaf_edges = []
+		for edge in unused_edges:
+			u, v = edge.ends
+			if not is_leaf(u) and not is_leaf(v):
+				internal_to_internal_edges.append(edge)
+			elif is_leaf(u) and is_leaf(v):
+				leaf_to_leaf_edges.append(edge)
+			else:
+				internal_to_leaf_edges.append(edge)
+		unused_edges = internal_to_internal_edges
+		unused_edges.extend(internal_to_leaf_edges)
+		unused_edges.extend(leaf_to_leaf_edges)
+
+		# Add edges (by tier) if it doesn't induce a cycle
+		for edge in unused_edges:
+			u, v = edge.ends
+			if connected_components.find(u) != connected_components.find(v):
+				spanning_tree.add_edge(edge)
+				connected_components.union(u, v)
+
+		return spanning_tree
 
 	leafy_forest = maximally_leafy_forest(graph)
 
@@ -105,17 +152,9 @@ def joined_forest_tree(graph):
 	return leafy_spanning_tree
 
 
-# Takes a leafy forest (a Graph instance composed of one or more disjoint trees) and
-# a list of unused edges in the original graph.
-# Returns a leafy spanning tree of the original graph.
-def create_spanning_tree_from_forest(forest, unused_edges):
-
-
-
-	return
-
-
 # YOUR CLEVER ALGORITHMS HERE
+
+
 
 
 # Maintain a list of all (algorithm name, algorithm function) so that they can be
@@ -123,3 +162,5 @@ def create_spanning_tree_from_forest(forest, unused_edges):
 ALGORITHMS = [
 	('Joined Forest Tree', joined_forest_tree)
 ]
+
+
