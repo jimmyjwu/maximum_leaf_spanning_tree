@@ -47,6 +47,19 @@ def get_unused_edges(graph):
 	return list(unused_edge_set)
 
 
+# Returns a list of edges in the graph but not in its subgraph
+def get_edge_difference(graph, subgraph):
+	graph_edges = get_edges(graph)
+	subgraph_edges = set(get_edges(subgraph))
+	edge_difference = []
+
+	for edge in graph_edges:
+		if edge not in subgraph_edges:
+			edge_difference.append(edge)
+
+	return edge_difference
+
+
 # Returns a list of all nodes in the tree that are leaves (degree one)
 def get_leaves(tree):
 	leaves = []
