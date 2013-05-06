@@ -1,6 +1,8 @@
 from graph import *
 from constants import *
 from random import shuffle
+import networkx as nx
+import matplotlib.pyplot as plt
 
 """
 This file contains convenient helper methods for graphs.
@@ -59,6 +61,14 @@ def create_copy(graph):
 	edges = get_edges(graph)
 	return make_graph(edges)
 
+# Plots a graph
+def plot_graph(graph):
+	G = nx.Graph()
+	G.add_nodes_from(get_nodes(graph))
+	for edge in get_edges(graph):
+		G.add_edge(edge.ends[0], edge.ends[1])
+	nx.draw(G)
+	plt.show()
 
 # Returns a random graph of given size
 def create_sample_graph(number_of_nodes, number_of_edges):
