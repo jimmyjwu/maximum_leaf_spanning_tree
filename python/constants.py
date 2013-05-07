@@ -22,7 +22,8 @@ MAXIMUM_NUMBER_OF_EDGES = 2000
 OUR_GRAPHS = 'hard.in'
 OUR_TREES = 'hard.out'
 ALL_GRAPHS_INPUT = 'hard.all.v3.in'
-ALL_GRAPHS_OUTPUT = 'hard.all.v3.out'
+ALL_TREES_OUTPUT = 'hard.all.v3.out'
+TEMPORARY_TREES_OUTPUT = 'hard.all.v3.out_temporary'
 MANUALLY_SOLVED_GRAPHS = 'manually_solved.in'
 MANUALLY_SOLVED_TREES = 'manually_solved.out'
 
