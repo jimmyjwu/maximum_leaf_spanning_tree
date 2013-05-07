@@ -16,10 +16,13 @@ python/				- Contains instructor-provided tools.
 	graph_generator.py 		- Our primary module for generating hard instances.
 	graph_helper.py 		- Contains useful helper methods for dealing with graphs.
 	graph_solver.py 		- Our primary module for generating leafy spanning trees from graphs.
-	hard.all.in 			- Every team's hard instances (input graphs).
+	hard.all.v3.in 			- Every team's hard instances (input graphs).
+	hard.all.v3.out 		- Our solutions to every team's hard instances (output trees).
 	hard.in 				- Our hard instances (input graphs).
 	hard.out 				- Our hard instances (output trees).
 	input_output.py 		- Contains functions for reading and writing graphs from/to files.
+	manually_solved.in 		- Contains graphs that have been manually solved.
+	manually_solved.out 	- Contains solutions (trees) to graphs that have been manually solved.
 	reader.py
 	README-python 			- Instructions for using the Python format checkers.
 	solver_algorithms.py 	- Contains all our algorithms for solving graphs.
