@@ -33,8 +33,8 @@ def find_leafy_spanning_trees(graphs):
 
 	leafy_spanning_trees = []
 
-	for graph in graphs:
-		best_tree = find_leafy_spanning_tree(graph, our_graphs, our_trees)
+	for i in range(len(graphs)):
+		best_tree = find_leafy_spanning_tree(graphs[i], i, our_graphs, our_trees, manually_solved_graphs, manually_solved_trees)
 		leafy_spanning_trees.append(best_tree)
 
 	return leafy_spanning_trees
@@ -43,7 +43,7 @@ def find_leafy_spanning_trees(graphs):
 # Takes a graph and returns the leafiest spanning tree we can find by running
 # it through all of our algorithms
 # For best results, also provide our own graph-tree pairs and manually-solved pairs
-def find_leafy_spanning_tree(graph, our_graphs=[], our_trees=[], manually_solved_graphs=[], manually_solved_trees=[]):
+def find_leafy_spanning_tree(graph, graph_number, our_graphs=[], our_trees=[], manually_solved_graphs=[], manually_solved_trees=[]):
 
 	# Maintain a record of bests so far
 	best_tree = None
@@ -60,12 +60,12 @@ def find_leafy_spanning_tree(graph, our_graphs=[], our_trees=[], manually_solved
 
 	# Test for line
 	if is_line(graph):
-		print('Best solution:\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected line')
+		print('Best solution for instance ' + str(i) + ':\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected line')
 		return graph
 
 	# Test for tree
 	if is_tree(graph):
-		print('Best solution:\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected tree')
+		print('Best solution for instance ' + str(i) + ':\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected tree')
 		return graph
 
 	# Test for small input size
@@ -90,7 +90,7 @@ def find_leafy_spanning_tree(graph, our_graphs=[], our_trees=[], manually_solved
 			best_algorithm = algorithm_name
 
 	# Log the best solution
-	print('Best solution:\tLeaves: ' + str(best_leaf_count) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: ' + best_algorithm)
+	print('Best solution for instance ' + str(i) + ':\tLeaves: ' + str(best_leaf_count) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: ' + best_algorithm)
 
 	return best_tree
 
