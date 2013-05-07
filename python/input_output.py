@@ -78,3 +78,23 @@ def output_graph_to_existing_file(graph, output_file):
 		v = edge.ends[1]
 		output_file.write(str(u) + ' ' + str(v) + '\n')
 
+# Merges best solutions from two files into a single new file
+# NOTE: the tree at index i of File 1 must correspond to the tree at index i of File 2
+def merge_solutions(file_name_1, file_name_2, merged_file_name):
+	trees_1 = input_graphs_from_file(file_name_1)
+	trees_2 = input_graphs_from_file(file_name_2)
+
+	for tree in trees_1:
+		tree.search()
+	for tree in trees_2:
+		tree.search()
+
+	best_trees = []
+	for i in range(len(trees_1)):
+		if trees_1[i].num_leaves >= trees_2[i].num_leaves:
+			best_trees.append(trees_1[i])
+		else:
+			best_trees.append(trees_2[i])
+
+	output_graphs_to_new_file(best_trees, merged_file_name)
+
