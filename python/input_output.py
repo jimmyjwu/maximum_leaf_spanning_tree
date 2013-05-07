@@ -93,8 +93,10 @@ def merge_solutions(file_name_1, file_name_2, merged_file_name):
 	for i in range(len(trees_1)):
 		if trees_1[i].num_leaves >= trees_2[i].num_leaves:
 			best_trees.append(trees_1[i])
+			print('Best tree for graph ' + str(i) + ' is in file 1.')
 		else:
 			best_trees.append(trees_2[i])
+			print('Best tree for graph ' + str(i) + ' is in file 2.')
 
 	output_graphs_to_new_file(best_trees, merged_file_name)
 
