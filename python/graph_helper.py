@@ -59,7 +59,7 @@ def get_edges(graph):
 
 # Returns a list of edges not used in the graph.
 def get_unused_edges(graph):
-	number_of_nodes = len(graph.neighbors)
+	number_of_nodes = len(get_nodes(graph))
 	unused_edge_set = set()
 
 	for current_node in range(0, number_of_nodes):
