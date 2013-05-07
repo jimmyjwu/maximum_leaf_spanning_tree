@@ -43,7 +43,7 @@ def find_leafy_spanning_trees(graphs):
 # Takes a graph and returns the leafiest spanning tree we can find by running
 # it through all of our algorithms
 # For best results, also provide our own graph-tree pairs and manually-solved pairs
-def find_leafy_spanning_tree(graph, graph_number, our_graphs=[], our_trees=[], manually_solved_graphs=[], manually_solved_trees=[]):
+def find_leafy_spanning_tree(graph, graph_number=0, our_graphs=[], our_trees=[], manually_solved_graphs=[], manually_solved_trees=[]):
 
 	# Maintain a record of bests so far
 	best_tree = None
