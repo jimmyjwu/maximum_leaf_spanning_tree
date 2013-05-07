@@ -60,12 +60,12 @@ def find_leafy_spanning_tree(graph, graph_number, our_graphs=[], our_trees=[], m
 
 	# Test for line
 	if is_line(graph):
-		print('Best solution for instance ' + str(i) + ':\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected line')
+		print('Best solution for instance ' + str(graph_number) + ':\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected line')
 		return graph
 
 	# Test for tree
 	if is_tree(graph):
-		print('Best solution for instance ' + str(i) + ':\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected tree')
+		print('Best solution for instance ' + str(graph_number) + ':\tLeaves: ' + str(len(get_leaves(graph))) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: detected tree')
 		return graph
 
 	# Test for small input size
@@ -90,7 +90,7 @@ def find_leafy_spanning_tree(graph, graph_number, our_graphs=[], our_trees=[], m
 			best_algorithm = algorithm_name
 
 	# Log the best solution
-	print('Best solution for instance ' + str(i) + ':\tLeaves: ' + str(best_leaf_count) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: ' + best_algorithm)
+	print('Best solution for instance ' + str(graph_number) + ':\tLeaves: ' + str(best_leaf_count) + '\t/\t' + str(len(get_nodes(graph))) + '\tAlgorithm: ' + best_algorithm)
 
 	return best_tree
 
